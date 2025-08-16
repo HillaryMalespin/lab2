@@ -2,17 +2,18 @@
 <html lang="es-CR">
 <head>
   <!-- Metadatos esenciales -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caribe Tico — Limón: Experiencias, Consejos e Itinerarios</title>
-  <meta name="description" content="Viaja por Limón, Costa Rica: experiencias reales, consejos prácticos e itinerarios personalizados por Cahuita, Puerto Viejo, Manzanillo y Tortuguero."/>
-  <link rel="canonical" href="https://caribetico.netlify.app/"/>
+  <meta name="description" content="Viaja por Limón, Costa Rica: experiencias reales, consejos prácticos e itinerarios personalizados por Cahuita, Puerto Viejo, Manzanillo y Tortuguero.">
+  <link rel="canonical" href="https://caribetico.netlify.app/">
 </head>
 <body>
   <!-- Skip link (navegación por teclado) -->
   <a class="skip-link" href="#contenido" tabindex="0">Saltar al contenido principal</a>
 
   <!-- Encabezado del sitio -->
+  <!-- header: encabezado semántico del sitio; contiene identidad y navegación principal. -->
   <header>
     <h1>Caribe Tico — Limón</h1>
     <p>Puerto Viejo, Cahuita, Manzanillo y Tortuguero: arma tu ruta perfecta por el Caribe costarricense.</p>
@@ -104,9 +105,7 @@
       <div>
         <h3>Consejos en video (subtítulos)</h3>
         <video controls width="480" aria-label="Video con consejos para moverte en Limón">
-          <source src="assets/consejos-limon.mp4" type="video/mp4"/>
-          <track kind="subtitles" src="assets/consejos-limon.vtt" srclang="es" label="Español" default />
-          Tu navegador no soporta el elemento <code>video</code>.
+
         </video>
       </div>
 
@@ -128,54 +127,53 @@
       <table aria-describedby="desc-itinerario">
         <caption id="desc-itinerario">Mini itinerario con paradas sugeridas por día</caption>
         <thead>
-            <tr>
+          <tr>
             <th scope="col">Día</th>
             <th scope="col">Zona</th>
             <th scope="col">Actividad sugerida</th>
-            </tr>
+          </tr>
         </thead>
         <tbody>
-            <tr>
+          <tr>
             <th scope="row">1</th>
             <td>Limón centro → Puerto Viejo</td>
             <td>Traslado, paseo en bici al atardecer</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">2</th>
             <td>Cahuita</td>
             <td>Sendero costero + snorkel (condiciones mediante)</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">3</th>
             <td>Puerto Viejo</td>
             <td>Playa Cocles / surf para principiantes</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">4</th>
             <td>Manzanillo</td>
             <td>Refugio Gandoca–Manzanillo y miradores</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">5</th>
             <td>Bribri</td>
             <td>Cascadas y experiencia cultural (tour comunitario)</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">6</th>
             <td>Tortuguero</td>
             <td>Canales en bote; en temporada, tour de desove</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">7</th>
             <td>Regreso</td>
             <td>Mercado local en Limón y despedida</td>
-            </tr>
+          </tr>
         </tbody>
-        </table>
-
+      </table>
     </section>
 
-    <!-- Sección: Presupuestos (tabla simple) -->
+    <!-- Sección: Presupuestos -->
     <section id="presupuestos" aria-labelledby="tit-presupuestos">
       <h2 id="tit-presupuestos">Presupuestos orientativos (7 días, USD)</h2>
       <p>Valores aproximados por persona; varían según temporada y elección de tours.</p>
@@ -183,41 +181,40 @@
       <table aria-describedby="desc-presupuesto">
         <caption id="desc-presupuesto">Valores aproximados por persona; varían según temporada y tours</caption>
         <thead>
-            <tr>
+          <tr>
             <th scope="col">Rubro</th>
             <th scope="col">Económico</th>
             <th scope="col">Estándar</th>
             <th scope="col">Premium</th>
-            </tr>
+          </tr>
         </thead>
         <tbody>
-            <tr>
+          <tr>
             <th scope="row">Alojamiento</th>
             <td>210</td>
             <td>420</td>
             <td>980</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">Transporte local</th>
             <td>120</td>
             <td>220</td>
             <td>400</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">Comidas</th>
             <td>140</td>
             <td>280</td>
             <td>560</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">Actividades</th>
             <td>120</td>
             <td>260</td>
             <td>520</td>
-            </tr>
+          </tr>
         </tbody>
-    </table>
-
+      </table>
     </section>
 
     <!-- Sección: Registro / Comunidad -->
@@ -228,24 +225,24 @@
       <form aria-labelledby="tit-registro">
         <div>
           <label for="nombre">Nombre completo</label>
-          <input id="nombre" name="nombre" type="text" required autocomplete="name"/>
+          <input id="nombre" name="nombre" type="text" required autocomplete="name">
         </div>
 
         <div>
           <label for="correo">Correo electrónico</label>
           <small id="help-correo">No compartiremos tu correo. Puedes darte de baja cuando quieras.</small>
-          <input id="correo" name="correo" type="email" required autocomplete="email" aria-describedby="help-correo"/>
+          <input id="correo" name="correo" type="email" required autocomplete="email" aria-describedby="help-correo">
         </div>
 
         <fieldset>
           <legend>Preferencia de viaje</legend>
-          <input type="radio" id="aventura" name="preferencia" value="aventura" checked/>
+          <input type="radio" id="aventura" name="preferencia" value="aventura" checked>
           <label for="aventura">Aventura</label>
 
-          <input type="radio" id="playa" name="preferencia" value="playa"/>
+          <input type="radio" id="playa" name="preferencia" value="playa">
           <label for="playa">Playa</label>
 
-          <input type="radio" id="cultural" name="preferencia" value="cultural"/>
+          <input type="radio" id="cultural" name="preferencia" value="cultural">
           <label for="cultural">Cultural</label>
         </fieldset>
 
@@ -260,7 +257,7 @@
         </div>
 
         <div>
-          <input type="checkbox" id="boletin" name="boletin" />
+          <input type="checkbox" id="boletin" name="boletin">
           <label for="boletin">Quiero recibir el boletín semanal</label>
         </div>
 
