@@ -29,7 +29,7 @@ Etiquetas clave usadas y propósito:
 
 ## 2) URL pública de Netlify
 
-👉 [https://caribetico.netlify.app/](https://caribetico.netlify.app/)
+👉 [https://caribetico02.netlify.app/](https://caribetico02.netlify.app/)
 
 ---
 
