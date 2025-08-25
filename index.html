@@ -7,14 +7,19 @@
   <title>Caribe Tico — Limón: Experiencias, Consejos e Itinerarios</title>
   <meta name="description" content="Viaja por Limón, Costa Rica: experiencias reales, consejos prácticos e itinerarios personalizados por Cahuita, Puerto Viejo, Manzanillo y Tortuguero.">
   <link rel="canonical" href="https://caribetico.netlify.app/">
+
+  <!-- Enlaces a hojas de estilo (ordenados por especificidad) -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/overrides.css">
 </head>
 <body>
   <!-- Skip link (navegación por teclado) -->
   <a class="skip-link" href="#contenido" tabindex="0">Saltar al contenido principal</a>
 
   <!-- Encabezado del sitio -->
-  <!-- header: encabezado semántico del sitio; contiene identidad y navegación principal. -->
-  <header>
+  <header id="banner">
     <h1>Caribe Tico — Limón</h1>
     <p>Puerto Viejo, Cahuita, Manzanillo y Tortuguero: arma tu ruta perfecta por el Caribe costarricense.</p>
 
@@ -30,51 +35,63 @@
     </nav>
   </header>
 
-  <!-- Contenido principal (único en la página) -->
+  <!-- Contenido principal -->
   <main id="contenido">
-    <!-- Sección: Destinos (Limón) -->
+    <!-- Sección: Destinos -->
     <section id="destinos" aria-labelledby="tit-destinos">
-      <h2 id="tit-destinos">Destinos imperdibles en Limón</h2>
+      <h2 id="tit-destinos" style="margin-bottom:24px;">Destinos imperdibles en Limón</h2>
 
-      <article aria-labelledby="art-1-tit">
-        <h3 id="art-1-tit">Parque Nacional Cahuita</h3>
-        <figure>
-          <img src="cahuita.jpg"
-               alt="Sendero costero con palmeras y mar turquesa en Cahuita"
-               width="480" tabindex="0" loading="lazy">
-          <figcaption>Cahuita: arrecifes, senderos junto a la playa y fauna caribeña.</figcaption>
-        </figure>
-        <p>Snorkel, caminatas fáciles y vida silvestre. Ideal para un primer día relajado.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Cahuita+Lim%C3%B3n+Costa+Rica"
-           target="_blank" rel="noopener noreferrer">Ver Cahuita en Google Maps</a>
-      </article>
+      <div class="card" data-tipo="parque">
+        <article aria-labelledby="art-1-tit">
+          <h3 id="art-1-tit">Parque Nacional Cahuita</h3>
+          <span class="badge">Recomendado</span>
+          <figure>
+            <img src="cahuita.jpg"
+                 alt="Sendero costero con palmeras y mar turquesa en Cahuita"
+                 width="480" tabindex="0" loading="lazy">
+            <figcaption>Cahuita: arrecifes, senderos junto a la playa y fauna caribeña.</figcaption>
+          </figure>
+          <p>Snorkel, caminatas fáciles y vida silvestre. Ideal para un primer día relajado.</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Cahuita+Lim%C3%B3n+Costa+Rica"
+             target="_blank" rel="noopener noreferrer">Ver Cahuita en Google Maps</a>
+        </article>
+      </div>
 
-      <article aria-labelledby="art-2-tit">
-        <h3 id="art-2-tit">Puerto Viejo de Talamanca</h3>
-        <img src="puerto-viejo.jpg"
-             alt="Bicicletas frente a la playa de Puerto Viejo con oleaje suave"
-             width="480" loading="lazy">
-        <p>Ambiente caribeño, cafés y playas como Cocles y Playa Negra. Moverse en bici es lo más práctico.</p>
-      </article>
+      <div class="card" data-tipo="playa">
+        <article aria-labelledby="art-2-tit">
+          <h3 id="art-2-tit">Puerto Viejo de Talamanca</h3>
+          <span class="badge">Popular</span>
+          <img src="puerto-viejo.jpg"
+               alt="Bicicletas frente a la playa de Puerto Viejo con oleaje suave"
+               width="480" loading="lazy">
+          <p>Ambiente caribeño, cafés y playas como Cocles y Playa Negra. Moverse en bici es lo más práctico.</p>
+        </article>
+      </div>
 
-      <article aria-labelledby="art-3-tit">
-        <h3 id="art-3-tit">Refugio Gandoca–Manzanillo</h3>
-        <img src="manzanillo.jpg"
-             alt="Mirador costero con acantilado verde y mar en Manzanillo"
-             width="480" tabindex="-1" loading="lazy">
-        <p>Senderos costeros y calas escondidas; excelente para observar aves y monos.</p>
-      </article>
+      <div class="card" data-tipo="reserva">
+        <article aria-labelledby="art-3-tit">
+          <h3 id="art-3-tit">Refugio Gandoca–Manzanillo</h3>
+          <span class="badge">Naturaleza</span>
+          <img src="manzanillo.jpg"
+               alt="Mirador costero con acantilado verde y mar en Manzanillo"
+               width="480" tabindex="-1" loading="lazy">
+          <p>Senderos costeros y calas escondidas; excelente para observar aves y monos.</p>
+        </article>
+      </div>
 
-      <article aria-labelledby="art-4-tit">
-        <h3 id="art-4-tit">Tortuguero</h3>
-        <img src="tortuguero.jpg"
-             alt="Canales selváticos de Tortuguero recorridos en bote"
-             width="480" loading="lazy">
-        <p>Canales en selva tropical. En temporada, desove de tortugas (tours autorizados).</p>
-      </article>
+      <div class="card" data-tipo="canales">
+        <article aria-labelledby="art-4-tit">
+          <h3 id="art-4-tit">Tortuguero</h3>
+          <span class="badge">Temporada</span>
+          <img src="tortuguero.jpg"
+               alt="Canales selváticos de Tortuguero recorridos en bote"
+               width="480" loading="lazy">
+          <p>Canales en selva tropical. En temporada, desove de tortugas (tours autorizados).</p>
+        </article>
+      </div>
     </section>
 
-    <!-- Sección: Consejos (accesibilidad, listas, multimedia accesible) -->
+    <!-- Sección: Consejos -->
     <section id="consejos" aria-labelledby="tit-consejos">
       <h2 id="tit-consejos">Consejos prácticos para Limón</h2>
 
@@ -86,7 +103,7 @@
 
       <div>
         <h3>Checklist esencial</h3>
-        <ul>
+        <ul class="listado">
           <li>Repelente, protector solar y capa para lluvia.</li>
           <li>Dinero en efectivo (algunas sodas y tours no aceptan tarjeta).</li>
           <li>Apps offline (mapas y traductor), copia de documentos.</li>
@@ -101,11 +118,10 @@
         </ol>
       </div>
 
-      <!-- multimedia accesible con subtítulos -->
       <div>
         <h3>Consejos en video (subtítulos)</h3>
         <video controls width="480" aria-label="Video con consejos para moverte en Limón">
-
+          <track kind="captions" srclang="es" src="consejos.vtt" label="Español">
         </video>
       </div>
 
@@ -120,10 +136,9 @@
       </div>
     </section>
 
-    <!-- Sección: Itinerario (tabla con thead/tbody + caption) -->
+    <!-- Sección: Itinerario -->
     <section id="itinerario" aria-labelledby="tit-itinerario">
-      <h2 id="tit-itinerario">Itinerario destacado: 7 días en Limón</h2>
-
+      <h2 id="tit-itinerario" style="color:#007f5f;">Itinerario destacado: 7 días en Limón</h2>
       <table aria-describedby="desc-itinerario">
         <caption id="desc-itinerario">Mini itinerario con paradas sugeridas por día</caption>
         <thead>
@@ -177,7 +192,6 @@
     <section id="presupuestos" aria-labelledby="tit-presupuestos">
       <h2 id="tit-presupuestos">Presupuestos orientativos (7 días, USD)</h2>
       <p>Valores aproximados por persona; varían según temporada y elección de tours.</p>
-
       <table aria-describedby="desc-presupuesto">
         <caption id="desc-presupuesto">Valores aproximados por persona; varían según temporada y tours</caption>
         <thead>
@@ -217,11 +231,10 @@
       </table>
     </section>
 
-    <!-- Sección: Registro / Comunidad -->
+    <!-- Sección: Registro -->
     <section id="registro" aria-labelledby="tit-registro">
       <h2 id="tit-registro">Únete a la comunidad viajera</h2>
       <p>Recibe itinerarios personalizados y tips del Caribe de Limón en tu correo.</p>
-
       <form aria-labelledby="tit-registro">
         <div>
           <label for="nombre">Nombre completo</label>
@@ -261,7 +274,7 @@
           <label for="boletin">Quiero recibir el boletín semanal</label>
         </div>
 
-        <button type="submit">Enviar registro</button>
+        <button class="btn" type="submit">Enviar registro</button>
       </form>
     </section>
   </main>
@@ -271,8 +284,8 @@
     <p>&copy; 2025 Caribe Tico — Limón. Hecho con amor caribeño.</p>
     <nav aria-label="Navegación de pie de página">
       <ul>
-        <li><a href="#contenido">Volver al inicio</a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Lim%C3%B3n+Costa+Rica"
+        <li><a class="btn" href="#contenido">Volver al inicio</a></li>
+        <li><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lim%C3%B3n+Costa+Rica"
                target="_blank" rel="noopener noreferrer">Ver mapa de Limón en Google Maps</a></li>
       </ul>
     </nav>
