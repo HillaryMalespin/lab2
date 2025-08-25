@@ -1,0 +1,41 @@
+/* OVERRIDES */
+
+/* Color destacado de h2 en Itinerario (inline style es obligatorio en HTML, pero aquí reforzamos) */
+#tit-itinerario {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+thead {
+  background: #007f5f;
+  color: #fff;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+/* Formularios */
+form div,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+input, select, button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button.btn {
+  cursor: pointer;
+}

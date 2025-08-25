@@ -1,0 +1,142 @@
+/* COMPONENTS */
+
+/* Tarjetas */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background: #007f5f;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #004d40;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: #ffb703;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+/* Listados */
+.listado {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.listado li {
+  margin-bottom: 0.4rem;
+}
+
+
+/* Sección Registro */
+#registro {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#registro h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #007f5f;
+  margin-bottom: 10px;
+}
+
+#registro p {
+  margin-bottom: 1.5rem;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Agrupación de campos */
+#registro form div,
+#registro form fieldset {
+  margin-bottom: 1.2rem;
+}
+
+#registro label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Inputs y select */
+#registro input[type="text"],
+#registro input[type="email"],
+#registro select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#registro small {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Radio y checkbox en línea */
+#registro fieldset {
+  border: none;
+  padding: 0;
+}
+#registro fieldset legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+#registro input[type="radio"],
+#registro input[type="checkbox"] {
+  margin-right: 6px;
+}
+#registro fieldset label,
+#registro div label[for="boletin"] {
+  display: inline-block;
+  margin-right: 16px;
+  font-weight: normal;
+}
+
+/* Botón */
+#registro .btn {
+  display: inline-block;
+  background: #007f5f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#registro .btn:hover {
+  background: #005f43;
+}

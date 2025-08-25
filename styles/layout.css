@@ -1,0 +1,35 @@
+/* LAYOUT */
+
+/* Header y navegación */
+#banner {
+  background: #e0f2f1;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 4px solid #007f5f;
+}
+
+#banner nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  background: #004d40;
+  color: #fff;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #a7ffeb;
+}
