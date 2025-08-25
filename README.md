@@ -5,45 +5,33 @@ Objetivo: ofrecer una página **ligera, accesible y fácil de navegar** desde m�
 
 ---
 
+## 1) Branch y Deploy
+
+- Rama creada: `lab3-selectores-boxmodel` [https://caribetico02.netlify.app/](https://caribetico02.netlify.app/)
+- Deploy Netlify: [https://caribetico.netlify.app/](https://caribetico.netlify.app/)
+
+---
+
 ## 2) Estructura semántica
 
-Etiquetas clave usadas y propósito (según el código enviado):
-
-- `<!DOCTYPE html>` y `lang="es-CR"`: documento HTML5 y localización en español de Costa Rica.
-- `<meta charset="UTF-8">`, `<meta name="viewport">`, `<meta name="description">`, `<link rel="canonical">`: metadatos de SEO y responsive.
-- `a.skip-link`: **enlace de salto** para ir directo al contenido (`href="#contenido"`).
-- `header` → `h1`, `p`, `nav[aria-label="Navegación principal"]` + `ul/li/a`: identidad del sitio y menú principal.
-- `main#contenido`: único bloque de contenido principal.
-- `section[aria-labelledby]` por cada tema: `#destinos`, `#consejos`, `#itinerario`, `#presupuestos`, `#registro`.
-- `h2`/`h3`: jerarquía de títulos.  
-- `article[aria-labelledby]`: tarjetas de cada destino.
-- `figure` + `img[alt][loading="lazy"]` + `figcaption`: imágenes con pie descriptivo.
-- Listas: `ul`/`ol` + `li` para checklist y pasos.
-- Cita: `aside` + `blockquote`.
-- Multimedia: `video[controls][aria-label]` (sección “Consejos en video”).
-- Tablas con **accesibilidad**: `caption`, `thead/tbody`, `th[scope]` y `aria-describedby`.
-- Formulario: `form` con `label[for]`/`input[id]`, `fieldset` + `legend`, `select`, `button[type="submit"]`.
-- `footer` con `nav[aria-label="Navegación de pie de página"]` y enlaces internos/externos.
+- `<!DOCTYPE html>` y `lang="es-CR"`: documento HTML5 y localización en español de Costa Rica.  
+- Metadatos (`charset`, `viewport`, `description`, `canonical`): SEO y responsive.  
+- `a.skip-link`: enlace de salto para accesibilidad.  
+- `header` con identidad y `nav[aria-label]`.  
+- `main#contenido`: único bloque de contenido principal.  
+- `section` por tema (`#destinos`, `#consejos`, `#itinerario`, `#presupuestos`, `#registro`).  
+- `article`, `figure`, `figcaption`, `ul`, `ol`, `blockquote`, `video`, `table` accesibles.  
+- `form` con `label`, `fieldset`, `legend`, `select`, `input`, `button`.  
+- `footer` con `nav[aria-label]`.  
 
 ---
 
-## 3) URL pública de Netlify
+## 3) Validaciones
 
-**https://caribetico.netlify.app/**
+### W3C (Nu HTML Checker)
+✔ Documento validado, **sin errores ni advertencias**.
 
----
-
-## 4) Validación W3C (Nu HTML Checker)
-
-- **Resultado:** _Document checking completed. No errors or warnings to show._  
-- **Qué se validó:** la página públicada no presentó errores.  
-- **Captura:** 
-![Validación W3C](w3c.jpg)
-
----
-
-## 5) Lighthouse (Desktop)
-
+### Lighthouse (Desktop)
 | Métrica           | Puntuación |
 |-------------------|------------|
 | **Performance**   | **89**     |
@@ -51,57 +39,73 @@ Etiquetas clave usadas y propósito (según el código enviado):
 | **Best Practices**| **100**    |
 | **SEO**           | **100**    |
 
-**Capturas:**
-![resumen 89/96/100/100](lighthouse.jpg)
-![Accesibilidad](Accesibilidad.jpg)
+Hallazgo: enlaces pequeños en el menú → mejorados con padding (`min-width:44px`, `min-height:44px`).
 
-### Hallazgos clave
-- **Touch targets do not have sufficient size or spacing** (objetivos táctiles pequeños o muy juntos) principalmente en enlaces del menú/índice (“Destinos”, “Consejos”, “Itinerario”, “Presupuestos”, “Únete”) y algunos controles.
+---
 
-### Plan de mejoras
-1. **Aumentar área clicable y separación de enlaces del menú** (recomendación Utilizar css para ajustar ~44×44 px):
-   ```css
-   /* Navegación y enlaces de índice */
-   nav a {
-     display: inline-block;
-     padding: 10px 14px;  /* ~44x44 px táctiles */
-     min-width: 44px;
-     min-height: 44px;
-     margin: 4px 6px;     /* separación entre enlaces */
-     line-height: 1.2;
-   }
+## 4) Accesibilidad
 
-   /* Indicador de foco visible para teclado */
-   a:focus-visible,
-   button:focus-visible {
-     outline: 2px solid currentColor;
-     outline-offset: 2px;
-   }
+- **tabindex:** en skip link (`0`), imágenes (`0` o `-1`) para control del orden de tabulación.  
+- **aria-label/aria-labelledby/aria-describedby:** en `nav`, `section`, `article`, `video`, `table`, `input#correo`.  
+- **alt:** en todas las imágenes con descripciones significativas.  
+- **Enlaces descriptivos:** texto claro como “Ver Cahuita en Google Maps”.  
+- **Subtítulos en video:** `<track kind="captions" srclang="es" ...>`.
 
-## 6) Accesibilidad aplicada: dónde y por qué usé `tabindex`, `aria-*`, `alt` y enlaces descriptivos
+---
 
-### `tabindex`
-- `a.skip-link[tabindex="0"]` → hace **enfocable** el enlace “Saltar al contenido principal”, permitiendo a usuarios de teclado saltar la cabecera e ir directo a `#contenido`.
-- `<img src="cahuita.jpg" tabindex="0">` → se dejó enfocable para poder llegar con TAB a la **figura** y leer el `figcaption`. **Mejora recomendada:** cambiar a `tabindex="-1"` (o quitarlo) para evitar una parada extra en la tabulación.
-- `<img src="manzanillo.jpg" tabindex="-1">` → permite **enfoque programático** (por scripts o al aterrizar desde un ancla) **sin** entrar al orden de tabulación.
+## 5) CSS aplicado
 
-> Nota: los encabezados de destino (`h2`) pueden llevar `tabindex="-1"` si se quiere que reciban foco al navegar por anclas sin sumar paradas al TAB.
+### Archivos
+- `styles/base.css` → reset, variables, tipografía, `box-sizing:border-box`.  
+- `styles/layout.css` → estructura, flexbox y grid, combinadores.  
+- `styles/components.css` → `.btn`, `.card`, `.badge`, `.listado`.  
+- `styles/overrides.css` → casos con `!important` y sobrescrituras.  
 
-### `aria-*`
-- `nav aria-label="Navegación principal"` y `nav aria-label="Navegación de pie de página"` → nombran cada región de navegación para lectores de pantalla.
-- `section aria-labelledby="tit-*"` → cada sección toma como **nombre accesible** su `h2` correspondiente (ej.: `#destinos`, `#consejos`, `#itinerario`, `#presupuestos`, `#registro`).
-- `article aria-labelledby="art-*-tit"` → cada destino usa su `h3` como nombre accesible del artículo.
-- `video aria-label="Video con consejos para moverte en Limón"` → proporciona nombre accesible al reproductor (además se prevé pista de subtítulos).
-- `table aria-describedby="desc-itinerario"` y `table aria-describedby="desc-presupuesto"` → vinculan cada tabla con su `caption`, dando **contexto** a usuarios de AT.
-- `input#correo aria-describedby="help-correo"` → asocia la ayuda contextual con el control del correo.
+### Selectores
+- **Tipo:** `header`, `nav`, `section`, `img`, `p`, `h1`, `h2`.  
+- **Clase:** `.btn`, `.card`, `.badge`, `.listado`.  
+- **ID:** `#destinos`, `#consejos`, `#itinerario`, `#presupuestos`, `#registro`.  
+- **Atributo:**  
+  - `a[target="_blank"]`  
+  - `img[alt]`  
+  - `input[type="email"]`  
+  - `a[href^="https://"]`  
+  - `a[href$=".pdf"]`
 
-### `alt` en imágenes
-- Todas las `img` incluyen `alt` **descriptivo y específico** (p. ej., “Sendero costero… en Cahuita”, “Bicicletas frente a la playa de Puerto Viejo…”, “Canales selváticos de Tortuguero…”).  
-  Esto permite comprender el contenido cuando la imagen no se ve o se usa lector de pantalla.
+### Combinadores
+- `.card p` (descendiente).  
+- `header > nav` (hijo directo).  
+- `nav a + a` (adyacente).  
+- `.tag ~ .tag` (hermanos).  
 
-### Enlaces descriptivos
-- Textos de enlace que **describen el destino de la acción**:  
-  - “**Ver Cahuita en Google Maps**”,  
-  - “**Ver mapa de Limón en Google Maps**”,  
-  - “**Volver al inicio**”.
-- Enlaces externos abiertos en pestaña nueva con `target="_blank"` usan `rel="noopener noreferrer"` por **seguridad** y rendimiento.
+### Pseudo-clases
+- Estado: `:hover`, `:focus-visible`, `:active`.  
+- Estructurales: `:first-child`, `:last-child`, `:nth-child(2n)`, `:not()`.  
+
+### Especificidad
+- Uso de `!important` en `.badge` dentro de `.card` (overrides.css).  
+- Estilo en línea en `<h2 style="margin-bottom:24px;">`.
+
+---
+
+## 6) Box Model y Positioning
+
+- `box-sizing: border-box` global.  
+- Márgenes y paddings controlados en títulos y tarjetas (`h2` + `.card`).  
+- Ejemplo de colapso de márgenes: `h2` seguido de `.card`.  
+- `overflow-x: auto` aplicado a tablas para scroll en pantallas pequeñas.  
+- **Flexbox:** en `nav ul` (`display:flex`, `gap`, `align-items:center`).  
+- **Grid:** en contenedor de tarjetas de destinos (`.cards-container` con `grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))`).  
+- **Positioning:**  
+  - `relative` en `.card`.  
+  - `absolute` en `.badge` (posicionado sobre la tarjeta).
+
+---
+
+## 7) Otras cosas
+
+- Diseño modular en carpetas: `base`, `layout`, `components`, `overrides`.  
+- Deploy en Netlify.  
+- README documenta dónde se aplicó cada requisito.
+
+---
