@@ -1,146 +1,6 @@
 /* COMPONENTS */
 
 /* Tarjetas */
-<<<<<<< Updated upstream
-.card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Botones */
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  background: #007f5f;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  transition: background 0.2s ease;
-}
-
-.btn:hover,
-.btn:focus {
-  background: #004d40;
-}
-
-/* Badge */
-.badge {
-  display: inline-block;
-  background: #ffb703;
-  color: #000;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 6px;
-  margin-left: 6px;
-}
-
-/* Listados */
-.listado {
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.listado li {
-  margin-bottom: 0.4rem;
-}
-
-
-/* Sección Registro */
-#registro {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-#registro h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #007f5f;
-  margin-bottom: 10px;
-}
-
-#registro p {
-  margin-bottom: 1.5rem;
-  color: #444;
-  font-size: 1rem;
-}
-
-/* Agrupación de campos */
-#registro form div,
-#registro form fieldset {
-  margin-bottom: 1.2rem;
-}
-
-#registro label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-/* Inputs y select */
-#registro input[type="text"],
-#registro input[type="email"],
-#registro select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-#registro small {
-  display: block;
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 4px;
-}
-
-/* Radio y checkbox en línea */
-#registro fieldset {
-  border: none;
-  padding: 0;
-}
-#registro fieldset legend {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-#registro input[type="radio"],
-#registro input[type="checkbox"] {
-  margin-right: 6px;
-}
-#registro fieldset label,
-#registro div label[for="boletin"] {
-  display: inline-block;
-  margin-right: 16px;
-  font-weight: normal;
-}
-
-/* Botón */
-#registro .btn {
-  display: inline-block;
-  background: #007f5f;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-#registro .btn:hover {
-  background: #005f43;
-=======
 .card{
   background:#fff;
   border:1px solid #ddd;
@@ -151,7 +11,7 @@
 }
 .card article{ display:grid; gap:.5rem; }
 
-/* Imágenes de cards (mantienen proporción y evitan saltos) */
+/* Imágenes de cards */
 .card img{ width:100%; height:auto; border-radius:8px; }
 @supports (aspect-ratio:16/9){
   .card img{ aspect-ratio:16 / 9; object-fit:cover; }
@@ -160,14 +20,14 @@
 /* Botones */
 .btn{
   display:inline-block; padding:.7rem 1.1rem; border-radius:8px;
-  background:var(--green-700); color:#fff; font-weight:700; margin-top:.4rem;
+  background:var(--green-900); color:#fff; font-weight:700; margin-top:.4rem;
   transition:transform .08s ease, background .2s ease;
 }
-.btn:hover, .btn:focus{ background:#005c47; transform:translateY(-1px); }
+.btn:hover, .btn:focus{ background:var(--green-700); transform:translateY(-1px); }
 
 /* Badge */
 .badge{
-  display:inline-block; background:#ffb703; color:#000; font-size:.8rem;
+  display:inline-block; background:var(--brand-lime); color:#2a2a2a; font-size:.8rem;
   font-weight:700; padding:2px 6px; border-radius:6px; margin-left:6px;
 }
 
@@ -175,34 +35,33 @@
 .listado{ padding-left:1.2rem; margin-bottom:1rem; }
 .listado li{ margin-bottom:.45rem; }
 
-/* Registro */
-#registro{
-  max-width:600px; margin:2rem auto; padding:2rem;
-  background:#fff; border-radius:var(--radius);
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
+/* ===== Galería rápida ===== */
+.galeria{
+  display: grid;
+  grid-template-columns: 1fr;   /* 1 columna en móvil */
+  gap: 1rem;
+  margin-top: .5rem;
 }
-#registro h2{
-  font-size:clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight:700; color:var(--green-700); margin-bottom:10px;
+.galeria figure{
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
-#registro p{ margin-bottom:1.2rem; color:#444; }
-#registro form div, #registro form fieldset{ margin-bottom:1rem; }
-#registro label{ display:block; font-weight:600; margin-bottom:6px; color:#333; }
-#registro input[type="text"], #registro input[type="email"], #registro select{
-  width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:1rem;
+.galeria img{ width: 100%; height: auto; display: block; }
+@supports (aspect-ratio: 16/9){
+  .galeria img{ aspect-ratio: 16 / 9; object-fit: cover; }
 }
-#registro small{ display:block; font-size:.85rem; color:#666; margin-top:4px; }
-#registro fieldset{ border:none; padding:0; }
-#registro fieldset legend{ font-weight:600; margin-bottom:8px; }
-#registro input[type="radio"], #registro input[type="checkbox"]{ margin-right:6px; }
-#registro fieldset label, #registro div label[for="boletin"]{
-  display:inline-block; margin-right:16px; font-weight:normal;
+@media (min-width: 768px){
+  .galeria{ grid-template-columns: 1fr 1fr; }
 }
-#registro .btn{
-  background:var(--green-700); border:0; padding:12px 20px; border-radius:8px;
-  font-size:1rem; font-weight:700; cursor:pointer; transition:background .2s;
+@media (min-width: 1024px){
+  .galeria{ max-width: 1000px; margin-inline: auto; }
 }
-#registro .btn:hover{ background:#005f43; }
+
+/* Pequeño ajuste de contraste */
+.card{ border-color: color-mix(in srgb, var(--green-900) 10%, #ddd); }
+th, td{ border-color: color-mix(in srgb, var(--green-900) 12%, #ddd); }
 
 /* Ajustes para menos scroll vertical en móvil */
 @media (max-width:480px){
@@ -214,57 +73,4 @@
 @media (min-width:1024px){
   .card{ transition:box-shadow .2s ease, transform .1s ease; }
   .card:hover{ box-shadow:0 10px 24px rgba(0,0,0,.12); transform:translateY(-2px); }
-}
-
-/* ===== Galería rápida ===== */
-.galeria{
-  display: grid;
-  grid-template-columns: 1fr;   /* 1 columna en móvil */
-  gap: 1rem;
-  margin-top: .5rem;
-}
-
-.galeria figure{
-  margin: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,.08);
-}
-
-.galeria img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Mantiene alturas consistentes sin recortar contenido importante */
-@supports (aspect-ratio: 16/9){
-  .galeria img{
-    aspect-ratio: 16 / 9; /* puedes cambiar a 4/3 si prefieres */
-    object-fit: cover;
-  }
-}
-
-/* Tablet: 2 columnas */
-@media (min-width: 768px){
-  .galeria{ grid-template-columns: 1fr 1fr; }
-}
-
-/* Desktop: centrado y ancho controlado (opcional) */
-@media (min-width: 1024px){
-  .galeria{
-    max-width: 1000px;
-    margin-inline: auto;
-  }
-}
-
-/* Un poco de aire al título de cada bloque en Consejos */
-#consejos h3{ margin-top: 1rem; }
-
-.card{
-  border-color: color-mix(in srgb, var(--green-900) 10%, #ddd);
-}
-th, td{
-  border-color: color-mix(in srgb, var(--green-900) 12%, #ddd);
->>>>>>> Stashed changes
 }

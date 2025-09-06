@@ -1,45 +1,3 @@
-<<<<<<< Updated upstream
-/* OVERRIDES */
-
-/* Color destacado de h2 en Itinerario (inline style es obligatorio en HTML, pero aquí reforzamos) */
-#tit-itinerario {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-/* Tablas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-thead {
-  background: #007f5f;
-  color: #fff;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.6rem;
-  text-align: left;
-}
-
-/* Formularios */
-form div,
-fieldset {
-  margin-bottom: 1rem;
-}
-
-input, select, button {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button.btn {
-  cursor: pointer;
-=======
 /* OVERRIDES y comunes */
 
 /* Título Itinerario */
@@ -50,7 +8,7 @@ button.btn {
 
 /* Tablas */
 table{ width:100%; border-collapse:collapse; margin:1rem 0; }
-thead{ background:var(--green-700); color:#fff; }
+thead{ background:var(--green-900); color:#fff; }
 th, td{ border:1px solid #ddd; padding:.6rem; text-align:left; }
 
 /* Formularios genéricos */
@@ -58,52 +16,22 @@ form div, fieldset{ margin-bottom:1rem; }
 input, select, button{ padding:.5rem; border:1px solid #ccc; border-radius:6px; }
 button.btn{ cursor:pointer; }
 
-/* Decorativos: visibles en desktop, ocultos en móvil/tablet si estorban */
-.decoracion{ display:none; }
-@media (min-width:1024px){
-  .decoracion{ display:block; }
-}
-
-/* ====== PALETA APLICADA ====== */
+/* ====== PALETA APLICADA a elementos globales ====== */
 #banner{
   background: color-mix(in srgb, var(--brand-500) 12%, white);
   border-bottom-color: var(--green-900);
 }
-#menu-principal a:hover,
-#menu-principal a:focus{
+#menu-principal a:hover, #menu-principal a:focus{
   background: color-mix(in srgb, var(--brand-500) 12%, transparent);
 }
-.btn{
-  background: var(--green-900);
-}
-.btn:hover, .btn:focus{
-  background: var(--green-700);
-}
-.badge{
-  background: var(--brand-lime);
-  color: #2a2a2a;
-}
-thead{
-  background: var(--green-900);
-}
-footer{
-  background: var(--green-900);
-}
-
-/* Línea sutil de realce en títulos principales */
-h2{
-  position: relative;
-}
+footer{ background: var(--green-900); }
+h2{ position: relative; }
 h2::after{
-  content:"";
-  display:block;
-  width:72px; height:4px; border-radius:2px;
-  background: var(--brand-500);
-  margin-top:.35rem;
+  content:""; display:block; width:72px; height:4px; border-radius:2px;
+  background: var(--brand-500); margin-top:.35rem;
 }
 
-
-/* ===== ÚNETE (sección con estética distinta) ===== */
+/* ===== ÚNETE (estética diferenciada) ===== */
 #registro{
   --grad-from: var(--brand-500);
   --grad-to: var(--green-700);
@@ -116,107 +44,45 @@ h2::after{
   gap: 1rem;
   margin-top: 2rem;
 }
-#registro h2{
-  color:#fff;
-  margin: 0;
-  letter-spacing:.2px;
-}
-#registro p{
-  color:rgba(255,255,255,.92);
-  margin: .25rem 0 1rem;
-  max-width: 52ch;
-}
-
-/* La tarjeta del formulario */
 #registro form{
-  background:#fff;
-  color:var(--ink);
-  border-radius:16px;
-  padding: clamp(1rem, 2.5vw, 1.5rem);
+  background:#fff; color:var(--ink);
+  border-radius:16px; padding: clamp(1rem, 2.5vw, 1.5rem);
   box-shadow:0 10px 24px rgba(0,0,0,.12);
 }
-
-/* Inputs modernitos */
-#registro input[type="text"],
-#registro input[type="email"],
-#registro select{
-  width:100%;
-  border:1.5px solid #DCE7E7;
-  border-radius:10px;
-  padding:12px 14px;
+#registro input[type="text"], #registro input[type="email"], #registro select{
+  width:100%; border:1.5px solid #DCE7E7; border-radius:10px; padding:12px 14px;
   transition:border-color .15s ease, box-shadow .15s ease;
 }
 #registro input:focus, #registro select:focus{
-  outline: none;
-  border-color: var(--green-700);
+  outline: none; border-color: var(--green-700);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-500) 35%, transparent);
 }
-
-/* Radios/checkbox alineados */
 #registro fieldset{ border:none; padding:0; }
 #registro fieldset label, #registro div label[for="boletin"]{
-  display:inline-flex; align-items:center; gap:.4rem; margin-right:16px;
-  font-weight:500;
+  display:inline-flex; align-items:center; gap:.4rem; margin-right:16px; font-weight:500;
 }
-
-/* Botón CTA */
 #registro .btn{
-  background: var(--green-900);
-  border:0;
-  padding:12px 18px;
-  border-radius:10px;
+  background: var(--green-900); border:0; padding:12px 18px; border-radius:10px;
   box-shadow: 0 6px 14px color-mix(in srgb, var(--green-900) 35%, transparent);
 }
 #registro .btn:hover{ background: var(--green-700); }
 
-/* Layout: dos columnas en desktop (texto izq. / formulario der.) */
-@media (min-width:1024px){
-  #registro{
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-  }
-  #registro h2, #registro p{ grid-column: 1; text-align:left; }
-  #registro form{ grid-column: 2; }
+/* Bloque de copy (título + párrafo) centrado vertical */
+.registro-copy{
+  display:flex; flex-direction:column; justify-content:center; gap:.6rem;
+  min-height:100%; padding-inline: clamp(.25rem, 1.2vw, 1rem);
 }
 
-/* Ajustes en móvil: menos scroll */
+/* Desktop: 2 columnas */
+@media (min-width:1024px){
+  #registro{
+    grid-template-columns: 1.2fr 1fr; align-items:stretch;
+  }
+  #registro form{ justify-self:end; max-width:520px; }
+}
+
+/* Móvil: pequeños ajustes */
 @media (max-width:480px){
   #registro{ padding:1rem; }
   #registro .btn{ padding:.9rem 1rem; }
-}
-
-
-/* ===== Ajuste de layout y centrado en #registro ===== */
-
-/* Quitamos la antigua regla que forzaba h2 y p a grid-column:1 */
-#registro h2, #registro p { grid-column: auto; }
-
-/* Contenedor del copy (titulo + párrafo) */
-.registro-copy{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;      /* centra verticalmente el texto */
-  gap: .6rem;
-  min-height: 100%;             /* ocupa toda la columna */
-  padding-inline: clamp(.25rem, 1.2vw, 1rem);
-}
-
-/* En desktop: dos columnas y alineaciones finas */
-@media (min-width:1024px){
-  #registro{
-    grid-template-columns: 1.2fr 1fr;  /* copy más ancho que el form */
-    align-items: stretch;               /* columnas de igual alto */
-  }
-  .registro-copy{ align-self: stretch; }
-  #registro form{
-    justify-self: end;                  /* pega el formulario al borde derecho del bloque */
-    max-width: 520px;                   /* tope agradable de ancho */
-  }
-}
-
-/* En tablet y móvil el bloque queda en una sola columna (ya lo tenías),
-   aquí solo afinamos separación para que respire más */
-@media (max-width: 1023.98px){
-  .registro-copy{ padding-bottom: .25rem; }
->>>>>>> Stashed changes
 }

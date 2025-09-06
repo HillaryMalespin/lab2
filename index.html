@@ -6,34 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caribe Tico — Limón: Experiencias, Consejos e Itinerarios</title>
   <meta name="description" content="Viaja por Limón, Costa Rica: experiencias reales, consejos prácticos e itinerarios personalizados por Cahuita, Puerto Viejo, Manzanillo y Tortuguero.">
-  <link rel="canonical" href="https://caribetico.netlify.app/">
+  <link rel="canonical" href="https://caribetico.netlify.app/" />
 
-  <!-- Enlaces a hojas de estilo -->
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/overrides.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/overrides.css" />
 </head>
 <body>
   <!-- Skip link -->
-  <a class="skip-link" href="#contenido" tabindex="0">Saltar al contenido principal</a>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-  <!-- Encabezado del sitio -->
+  <!-- Encabezado -->
   <header id="banner">
     <h1>Caribe Tico — Limón</h1>
     <p>Puerto Viejo, Cahuita, Manzanillo y Tortuguero: arma tu ruta perfecta por el Caribe costarricense.</p>
 
-    <!-- Imagen hero responsive -->
+    <!-- Hero con <picture> -->
     <picture>
-      <source srcset="hero-desktop.jpg" media="(min-width:1024px)">
-      <source srcset="hero-tablet.jpg" media="(min-width:768px)">
-      <img src="hero-mobile.jpg" alt="Paisaje del Caribe costarricense">
+      <source srcset="tortuguero.jpg" media="(min-width:1024px)" />
+      <source srcset="limon-ciudad.jpg" media="(min-width:768px)" />
+      <img src="playa-caribe.jpg" alt="Paisaje del Caribe costarricense con mar y selva" />
     </picture>
 
-    <!-- Botón hamburguesa (móvil) -->
-    <button id="menu-toggle" aria-controls="menu-principal" aria-expanded="false">☰</button>
+    <!-- Menú hamburguesa (móvil) -->
+    <button id="menu-toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">☰</button>
 
-    <!-- Navegación principal -->
+    <!-- Navegación -->
     <nav id="menu-principal" aria-label="Navegación principal">
       <ul>
         <li><a href="#destinos">Destinos</a></li>
@@ -47,20 +47,16 @@
 
   <!-- Contenido principal -->
   <main id="contenido">
-    <!-- Sección: Destinos -->
+    <!-- DESTINOS -->
     <section id="destinos" aria-labelledby="tit-destinos">
       <h2 id="tit-destinos">Destinos imperdibles en Limón</h2>
 
-      <div class="card">
+      <div class="card" data-tipo="parque">
         <article aria-labelledby="art-1-tit">
           <h3 id="art-1-tit">Parque Nacional Cahuita</h3>
           <span class="badge">Recomendado</span>
           <figure>
-<<<<<<< Updated upstream
-            <img src="cahuita.jpg" alt="Sendero costero con palmeras y mar turquesa en Cahuita" loading="lazy">
-=======
             <img src="cahuita.jpg" alt="Sendero costero con palmeras y mar turquesa en Cahuita" loading="lazy" />
->>>>>>> Stashed changes
             <figcaption>Cahuita: arrecifes, senderos junto a la playa y fauna caribeña.</figcaption>
           </figure>
           <p>Snorkel, caminatas fáciles y vida silvestre. Ideal para un primer día relajado.</p>
@@ -68,82 +64,95 @@
         </article>
       </div>
 
-      <div class="card">
+      <div class="card" data-tipo="playa">
         <article aria-labelledby="art-2-tit">
           <h3 id="art-2-tit">Puerto Viejo de Talamanca</h3>
           <span class="badge">Popular</span>
-          <img src="puerto-viejo.jpg" alt="Bicicletas frente a la playa de Puerto Viejo con oleaje suave" loading="lazy">
+          <img src="puerto-viejo.jpg" alt="Bicicletas frente a la playa de Puerto Viejo con oleaje suave" loading="lazy" />
           <p>Ambiente caribeño, cafés y playas como Cocles y Playa Negra. Moverse en bici es lo más práctico.</p>
         </article>
       </div>
 
-      <div class="card">
+      <div class="card" data-tipo="reserva">
         <article aria-labelledby="art-3-tit">
           <h3 id="art-3-tit">Refugio Gandoca–Manzanillo</h3>
           <span class="badge">Naturaleza</span>
-          <img src="manzanillo.jpg" alt="Mirador costero con acantilado verde y mar en Manzanillo" loading="lazy">
+          <img src="manzanillo.jpg" alt="Mirador costero con acantilado verde y mar en Manzanillo" loading="lazy" />
           <p>Senderos costeros y calas escondidas; excelente para observar aves y monos.</p>
         </article>
       </div>
 
-      <div class="card">
+      <div class="card" data-tipo="canales">
         <article aria-labelledby="art-4-tit">
           <h3 id="art-4-tit">Tortuguero</h3>
           <span class="badge">Temporada</span>
-          <img src="tortuguero.jpg" alt="Canales selváticos de Tortuguero recorridos en bote" loading="lazy">
+          <img src="tortuguero.jpg" alt="Canales selváticos de Tortuguero recorridos en bote" loading="lazy" />
           <p>Canales en selva tropical. En temporada, desove de tortugas (tours autorizados).</p>
         </article>
       </div>
     </section>
 
-    <!-- Sección: Consejos -->
+    <!-- CONSEJOS -->
     <section id="consejos" aria-labelledby="tit-consejos">
       <h2 id="tit-consejos">Consejos prácticos para Limón</h2>
-      <aside>
-        <blockquote>“Viajar te deja sin palabras y después te convierte en narrador.”</blockquote>
+
+      <aside aria-labelledby="cita-inspiracion">
+        <blockquote id="cita-inspiracion">“Viajar te deja sin palabras y después te convierte en narrador.”</blockquote>
       </aside>
 
-      <h3>Checklist esencial</h3>
-      <ul class="listado">
-        <li>Repelente, protector solar y capa para lluvia.</li>
-        <li>Dinero en efectivo (algunas sodas y tours no aceptan tarjeta).</li>
-        <li>Apps offline (mapas y traductor), copia de documentos.</li>
-        <li>Snorkel básico si piensas visitar arrecifes (según condiciones).</li>
-      </ul>
+      <div>
+        <h3>Checklist esencial</h3>
+        <ul class="listado">
+          <li>Repelente, protector solar y capa para lluvia.</li>
+          <li>Dinero en efectivo (algunas sodas y tours no aceptan tarjeta).</li>
+          <li>Apps offline (mapas y traductor), copia de documentos.</li>
+          <li>Snorkel básico si piensas visitar arrecifes (según condiciones).</li>
+        </ul>
 
-      <h3>Antes de moverte entre destinos</h3>
-      <ol>
-        <li>Consultar estado del tiempo y mareas.</li>
-        <li>Reservar tours autorizados con antelación.</li>
-        <li>Verificar horarios de buses o rentar bici en Puerto Viejo.</li>
-      </ol>
+        <h3>Antes de moverte entre destinos</h3>
+        <ol>
+          <li>Consultar estado del tiempo y mareas.</li>
+          <li>Reservar tours autorizados (snorkel o desove) con antelación.</li>
+          <li>Verificar horarios de buses o rentar bici en Puerto Viejo.</li>
+        </ol>
+      </div>
 
-      <h3>Consejos en video</h3>
-      <video controls aria-label="Video con consejos para moverte en Limón">
-        <track kind="captions" srclang="es" src="consejos.vtt" label="Español">
-      </video>
+      <div>
+        <h3>Consejos en video (subtítulos)</h3>
+        <video controls aria-label="Video con consejos para moverte en Limón">
+          <track kind="captions" srclang="es" src="consejos.vtt" label="Español" />
+        </video>
+      </div>
 
-      <h3>Galería rápida</h3>
-      <img src="limon-ciudad.jpg" alt="Muelle y edificios coloridos en la ciudad de Limón" loading="lazy">
-      <img src="playa-caribe.jpg" alt="Playa caribeña de arena clara con palmeras inclinadas" loading="lazy">
+      <div>
+        <h3>Galería rápida</h3>
+        <div class="galeria" aria-label="Galería rápida">
+          <figure><img src="limon-ciudad.jpg" alt="Vista aérea de la ciudad de Limón" loading="lazy"></figure>
+          <figure><img src="playa-caribe.jpg" alt="Playa caribe con palmeras" loading="lazy"></figure>
+        </div>
+      </div>
     </section>
 
-    <!-- Sección: Itinerario -->
+    <!-- ITINERARIO -->
     <section id="itinerario" aria-labelledby="tit-itinerario">
       <h2 id="tit-itinerario">Itinerario destacado: 7 días en Limón</h2>
-      <table>
-        <caption>Mini itinerario con paradas sugeridas por día</caption>
+      <table aria-describedby="desc-itinerario">
+        <caption id="desc-itinerario">Mini itinerario con paradas sugeridas por día</caption>
         <thead>
-          <tr><th>Día</th><th>Zona</th><th>Actividad</th></tr>
+          <tr>
+            <th scope="col">Día</th>
+            <th scope="col">Zona</th>
+            <th scope="col">Actividad sugerida</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><th>1</th><td>Limón centro → Puerto Viejo</td><td>Paseo en bici al atardecer</td></tr>
-          <tr><th>2</th><td>Cahuita</td><td>Sendero costero + snorkel</td></tr>
-          <tr><th>3</th><td>Puerto Viejo</td><td>Playa Cocles / surf</td></tr>
-          <tr><th>4</th><td>Manzanillo</td><td>Refugio y miradores</td></tr>
-          <tr><th>5</th><td>Bribri</td><td>Cascadas y tour cultural</td></tr>
-          <tr><th>6</th><td>Tortuguero</td><td>Canales y desove</td></tr>
-          <tr><th>7</th><td>Regreso</td><td>Mercado local y despedida</td></tr>
+          <tr><th scope="row">1</th><td>Limón centro → Puerto Viejo</td><td>Traslado, paseo en bici al atardecer</td></tr>
+          <tr><th scope="row">2</th><td>Cahuita</td><td>Sendero costero + snorkel (condiciones mediante)</td></tr>
+          <tr><th scope="row">3</th><td>Puerto Viejo</td><td>Playa Cocles / surf para principiantes</td></tr>
+          <tr><th scope="row">4</th><td>Manzanillo</td><td>Refugio Gandoca–Manzanillo y miradores</td></tr>
+          <tr><th scope="row">5</th><td>Bribri</td><td>Cascadas y experiencia cultural (tour comunitario)</td></tr>
+          <tr><th scope="row">6</th><td>Tortuguero</td><td>Canales en bote; en temporada, tour de desove</td></tr>
+          <tr><th scope="row">7</th><td>Regreso</td><td>Mercado local en Limón y despedida</td></tr>
         </tbody>
       </table>
     </section>
@@ -151,39 +160,57 @@
     <!-- PRESUPUESTOS -->
     <section id="presupuestos" aria-labelledby="tit-presupuestos">
       <h2 id="tit-presupuestos">Presupuestos orientativos (7 días, USD)</h2>
-      <table>
-        <caption>Valores aproximados por persona; varían según temporada</caption>
+      <p>Valores aproximados por persona; varían según temporada y elección de tours.</p>
+      <table aria-describedby="desc-presupuesto">
+        <caption id="desc-presupuesto">Valores aproximados por persona; varían según temporada y tours</caption>
         <thead>
-          <tr><th>Rubro</th><th>Económico</th><th>Estándar</th><th>Premium</th></tr>
+          <tr>
+            <th scope="col">Rubro</th>
+            <th scope="col">Económico</th>
+            <th scope="col">Estándar</th>
+            <th scope="col">Premium</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><th>Alojamiento</th><td>210</td><td>420</td><td>980</td></tr>
-          <tr><th>Transporte local</th><td>120</td><td>220</td><td>400</td></tr>
-          <tr><th>Comidas</th><td>140</td><td>280</td><td>560</td></tr>
-          <tr><th>Actividades</th><td>120</td><td>260</td><td>520</td></tr>
+          <tr><th scope="row">Alojamiento</th><td>210</td><td>420</td><td>980</td></tr>
+          <tr><th scope="row">Transporte local</th><td>120</td><td>220</td><td>400</td></tr>
+          <tr><th scope="row">Comidas</th><td>140</td><td>280</td><td>560</td></tr>
+          <tr><th scope="row">Actividades</th><td>120</td><td>260</td><td>520</td></tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Sección: Registro -->
+    <!-- ÚNETE -->
     <section id="registro" aria-labelledby="tit-registro">
-      <h2 id="tit-registro">Únete a la comunidad viajera</h2>
-      <p>Recibe itinerarios personalizados y tips en tu correo.</p>
-      <form>
+      <div class="registro-copy">
+        <h2 id="tit-registro">Únete a la comunidad viajera</h2>
+        <p>Recibe itinerarios personalizados y tips del Caribe de Limón en tu correo.</p>
+      </div>
+
+      <form aria-labelledby="tit-registro">
         <div>
           <label for="nombre">Nombre completo</label>
-          <input id="nombre" name="nombre" type="text" required>
+          <input id="nombre" name="nombre" type="text" required autocomplete="name" />
         </div>
+
         <div>
           <label for="correo">Correo electrónico</label>
-          <input id="correo" name="correo" type="email" required>
+          <small id="help-correo">No compartiremos tu correo. Puedes darte de baja cuando quieras.</small>
+          <input id="correo" name="correo" type="email" required autocomplete="email" aria-describedby="help-correo" />
         </div>
+
         <fieldset>
           <legend>Preferencia de viaje</legend>
-          <label><input type="radio" name="preferencia" value="aventura" checked> Aventura</label>
-          <label><input type="radio" name="preferencia" value="playa"> Playa</label>
-          <label><input type="radio" name="preferencia" value="cultural"> Cultural</label>
+          <input type="radio" id="aventura" name="preferencia" value="aventura" checked />
+          <label for="aventura">Aventura</label>
+
+          <input type="radio" id="playa" name="preferencia" value="playa" />
+          <label for="playa">Playa</label>
+
+          <input type="radio" id="cultural" name="preferencia" value="cultural" />
+          <label for="cultural">Cultural</label>
         </fieldset>
+
         <div>
           <label for="zona">¿Qué zona te interesa más?</label>
           <select id="zona" name="zona">
@@ -193,13 +220,15 @@
             <option value="tortuguero">Tortuguero</option>
           </select>
         </div>
+
         <div>
-          <label><input type="checkbox" id="boletin" name="boletin"> Quiero recibir el boletín semanal</label>
+          <input type="checkbox" id="boletin" name="boletin" />
+          <label for="boletin">Quiero recibir el boletín semanal</label>
         </div>
+
         <button class="btn" type="submit">Enviar registro</button>
       </form>
     </section>
-
   </main>
 
   <!-- Pie -->
@@ -215,12 +244,4 @@
 
   <!-- Script menú hamburguesa -->
   <script>
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("menu-principal");
-    toggle.addEventListener("click", () => {
-      const abierto = nav.classList.toggle("abierto");
-      toggle.setAttribute("aria-expanded", abierto);
-    });
-  </script>
-</body>
-</html>
+    const toggle = documen
