@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* BASE STYLES */
 
 /* Reset mínimo */
@@ -40,3 +41,52 @@ a:focus {
 .skip-link:focus {
   top: 0;
 }
+=======
+/* BASE STYLES — mobile-first */
+
+/* Reset mínimo */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+/* Paleta y tipografía */
+:root{
+  /* PALETA */
+  --ink: #484848;           /* texto principal */
+  --bg: #FAFCFC;            /* fondo del sitio */
+  --green-900: #006465;     /* brand dark (nav/footer/botones) */
+  --green-700: #0F928C;     /* brand medium (hover, acentos) */
+  --brand-500: #00C9D2;     /* cian brillante (detalles) */
+  --brand-lime: #BEEE3B;    /* lima (badge/acento) */
+  --radius: 12px;
+}
+body{ color:var(--ink); background-color:var(--bg); }
+
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.6;
+  color:var(--ink);
+  background-color:var(--bg);
+  overflow-x:hidden; /* evita scroll horizontal accidental */
+}
+
+/* Tipografía fluida */
+h1{ font-size:clamp(1.8rem, 2.8vw, 3rem); }
+h2{ font-size:clamp(1.4rem, 2.2vw, 2rem); margin-bottom:.75rem; }
+h3{ font-size:clamp(1.15rem, 1.6vw, 1.35rem); }
+
+/* Enlaces */
+a{ color:#00695c; text-decoration:none; }
+a:hover, a:focus{ text-decoration:underline; }
+
+/* Medios fluidos (sin scroll horizontal) */
+img, video, iframe, table{ max-width:100%; height:auto; display:block; }
+
+/* Skip link accesible */
+.skip-link{
+  position:absolute; top:-40px; left:0; background:var(--green-700);
+  color:#fff; padding:8px 10px; z-index:100; border-radius:0 0 8px 0;
+}
+.skip-link:focus{ top:0; }
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* LAYOUT */
 
 /* Header y navegación */
@@ -32,4 +33,106 @@ footer {
 
 footer a {
   color: #a7ffeb;
+=======
+/* LAYOUT — mobile-first */
+
+/* Header y navegación */
+#banner{
+  background:#e0f2f1;
+  padding:1.25rem;
+  text-align:center;
+  border-bottom:4px solid var(--green-700);
+}
+#banner h1{ margin-bottom:.25rem; }
+#banner p{ margin-bottom:.75rem; color:#1b4b43; }
+
+/* ---- HERO controlado: altura responsiva y recorte elegante ---- */
+#banner picture img{
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* En pantallas medianas y grandes, limitar altura y recortar con cover */
+@media (min-width: 768px){
+  #banner picture img{
+    height: clamp(220px, 45vh, 420px);
+    object-fit: cover;   /* recorta sin deformar */
+  }
+}
+
+/* En móvil, una altura menor para reducir scroll */
+@media (max-width: 480px){
+  #banner picture img{
+    height: clamp(180px, 38vh, 300px);
+    object-fit: cover;
+  }
+}
+
+/* Decorativo: oculto por defecto (móvil) */
+.decoracion{ display:none; width:120px; height:auto; margin:0.5rem auto 0; border-radius:8px; }
+
+/* Botón hamburguesa (visible en móvil) */
+#menu-toggle{
+  margin-top:.75rem; background:none; border:none; font-size:2rem; line-height:1;
+  cursor:pointer;
+}
+
+/* Menú (cerrado por defecto en móvil) */
+#menu-principal{ display:none; margin-top:.75rem; }
+#menu-principal.abierto{ display:block; }
+#menu-principal ul{
+  list-style:none; display:flex; flex-direction:column; gap:.75rem; align-items:center; padding:0;
+}
+#menu-principal a{ padding:.5rem .75rem; border-radius:8px; font-weight:600; }
+#menu-principal a:hover, #menu-principal a:focus{ background:rgba(0,0,0,.06); text-decoration:none; }
+
+/* Main */
+main{ padding:1.25rem; max-width:1000px; margin:auto; }
+section{ margin-block:1.5rem; }
+
+/* Grid de cards (Destinos) */
+#destinos{
+  display:grid;
+  grid-template-columns:1fr; /* 1 columna móvil */
+  gap:1.25rem;
+}
+#destinos > h2{ grid-column:1 / -1; margin-bottom:.75rem; } /* evita descuadre */
+
+/* Tablas seguras en móvil */
+table{ width:100%; border-collapse:collapse; }
+@media (max-width:480px){
+  table{ display:block; overflow-x:auto; }
+  thead, tbody, tr{ width:100%; }
+}
+
+/* Footer */
+footer{
+  background:var(--green-900);
+  color:#fff; padding:1rem; margin-top:2rem;
+}
+footer a{ color:#a7ffeb; }
+
+/* ===== Breakpoints ===== */
+
+/* Tablet (≥768px) */
+@media (min-width:768px){
+  /* Menú visible; botón oculto */
+  #menu-toggle{ display:none; }
+  #menu-principal{ display:block; margin-top:1rem; }
+  #menu-principal ul{ flex-direction:row; justify-content:center; gap:1rem; }
+
+  /* 2 columnas en tablet */
+  #destinos{ grid-template-columns:1fr 1fr; }
+
+  /* decorativo opcional */
+  .decoracion{ display:block; margin:0.75rem auto 0; }
+}
+
+/* Desktop (≥1024px) */
+@media (min-width:1024px){
+  main{ max-width:1100px; }
+  /* 3 columnas en desktop */
+  #destinos{ grid-template-columns:1fr 1fr 1fr; }
+>>>>>>> Stashed changes
 }
